@@ -22,6 +22,25 @@ int     LED1=LOW;
 int     LED2=LOW;
 int     LED3=LOW;
 int     LED4=LOW;
+
+void  pinch() {
+  
+  
+  
+}
+
+void  mouseTab() {
+  
+  
+  
+}
+ 
+void  powerGrip() {
+  
+  
+  
+}
+ 
  
 void setup() {
   // initialize serial communication at 9600 bits per second:

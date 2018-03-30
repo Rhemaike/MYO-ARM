@@ -1,9 +1,9 @@
 
 //length requirements for pulses
-float     pet = 500;        //pulse excitation required for trigger
-float     splb=10;         //short pulse lower time boundary
-float     lpb=40;          //long pulse time boundary
-float     dcat=40;         //down count activation time. down time required to activate movement minus time for raa to settle below pet
+#define    pet = 500;        //pulse excitation required for trigger
+#define    splb=10;         //short pulse lower time boundary
+#define     lpb=40;          //long pulse time boundary
+#define    dcat=40;         //down count activation time. down time required to activate movement minus time for raa to settle below pet
 
 int     di;             //direct input
 int     c1=5;           //counter 1

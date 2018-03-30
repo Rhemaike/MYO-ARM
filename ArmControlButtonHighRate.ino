@@ -1,13 +1,13 @@
 
 //length requirements for pulses
-float     pe = 500;        //pulse excitation required for trigger
+float     pet = 500;        //pulse excitation required for trigger
 float     splb=10;         //short pulse lower time boundary
 float     lpb=40;          //long pulse time boundary
-float     dcat=40;         //down count activation time. down time required to activate movement minus time for raa to settle below pe
+float     dcat=40;         //down count activation time. down time required to activate movement minus time for raa to settle below pet
 
 int     di;             //direct input
 int     c1=5;           //counter 1
-int     c3=0;
+int     c3=0;           //counter 3
 int     pc=0;           //Pulse counter
 int     dc=0;           //down count
 int     dia[10];        //direct input array
@@ -71,11 +71,11 @@ void loop() {
     dia[4]= dia[9];
   }
 
-  //setting raa (rolling average array) to the average of the last 5 di(direct input)
-  raa= (dia[c1]+dia[c1-1]+dia[c1-2]+dia[c1-3]+dia[c1-4])/5;         //I think raa will work as not an array
+  //setting ra (rolling average array) to the average of the last 5 di(direct input)
+  ra= (dia[c1]+dia[c1-1]+dia[c1-2]+dia[c1-3]+dia[c1-4])/5;         
 
    //set up short pulse (sp)
-  if (raa >= pe)
+  if (ra >= pet)
   {
    c3=c3+1; 
    dc=0;
@@ -88,7 +88,7 @@ void loop() {
   {
     pc=pc+1;
   }
-  if (raa < pe)
+  if (ra < pet)
   {
     dc=dc+1;
   }

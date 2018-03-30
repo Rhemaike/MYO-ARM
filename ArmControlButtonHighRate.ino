@@ -23,6 +23,22 @@ int     LED2=LOW;
 int     LED3=LOW;
 int     LED4=LOW;
 
+
+void printValues(pc,c3,di,raa) {
+  Serial.print("pc=");
+  Serial.print(pc);
+  Serial.print(',');
+  Serial.print("c3=");
+  Serial.print(c3);
+  Serial.print(',');
+  Serial.print("di=");
+  Serial.print(di);
+  Serial.print(',');
+  Serial.print("raa=");
+  Serial.print(raa);
+  Serial.println(','); 
+}
+
 void  pinch() {
   
   
@@ -133,20 +149,9 @@ void loop() {
   digitalWrite(led3,LED3);
   digitalWrite(led4,LED4);
 
-    // print values you to serial monitor
-  Serial.print("pc=");
-  Serial.print(pc);
-  Serial.print(',');
-  Serial.print("c3=");
-  Serial.print(c3);
-  Serial.print(',');
-  Serial.print("di=");
-  Serial.print(di);
-  Serial.print(',');
-  Serial.print("raa=");
-  Serial.print(raa);
-  Serial.println(',');
-
+  // print values you to serial monitor
+  printValues(pc,c3,di,raa);
+  
   delay(1);        // delay in between reads for stability
   
   //testing git hub 123

@@ -40,6 +40,29 @@ void  powerGrip() {
   
   
 }
+
+
+void open() {
+for (pos = 180; pos>=0, pos -=1) // pos goes from 180 to 0 ####### not sure if -1 is what we want.
+  {
+    if (thumbPos>=pos && thumbPos >=thumbmin) //move thumb if it is greater than pos and in range 
+      {
+        thumbPos = pos;
+        thumbServo.write(thumbPos);
+      }
+    if (middlePos>=pos && middlePos >=middlemin) //move mid fingers if it is greater than pos and in range 
+      {
+        middlePos = pos;
+        middleServo.write(middleposPos);
+      }
+    if (ringPos>=pos && ringPos >=ringmin) //move ring fingers if it is greater than pos and in range 
+      {
+        ringPos = pos;
+        ringServo.write(ringPos);
+      }
+    delay(1)              //delay a lil bit
+  }
+
  
  
 void setup() {

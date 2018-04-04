@@ -41,7 +41,7 @@ void mouseTap(){
     if ( pos < ringMAXmouse && pos >= ringPos) {
       ringservo.write(ringPos); // we want the ring position to go to ring max
     }
-    delay(15);                       // waits 15ms for the servo to reach the position
+    delay(1);                       // waits 15ms for the servo to reach the position
   }
   
   }
@@ -49,6 +49,7 @@ void mouseTap(){
   for (pos = 180; pos >= 0; pos -= 12) { // goes from 180 degrees to 0 degrees
     if (pos > ringMAXmouse)
       middlePos = pos;
+      delay(1);
   }
  
  if ( pos < middleMAXmouse && pos >= middlePos) { // we want the middle position to go to middle max
